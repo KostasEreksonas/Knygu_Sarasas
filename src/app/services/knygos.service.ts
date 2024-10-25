@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { Knygos } from '../interfaces/knygos';
 
 @Injectable({
@@ -6,6 +6,7 @@ import { Knygos } from '../interfaces/knygos';
 })
 export class KnygosService {
   public knygos:Knygos[] = [];
+  public onCountChange = new EventEmitter();
 
   constructor() {
     let tmp = localStorage.getItem("knygos");
@@ -23,16 +24,19 @@ export class KnygosService {
       autorius:autorius,
       pavadinimas:pavadinimas,
       metai:metai
-    })
+    });
+    this.onCountChange.emit();
   }
 
   public pasalintiKnyga(i:number) {
     this.knygos.splice(i,1);
     this.issaugoti();
+    this.onCountChange.emit();
   }
 
   public pasalintiViska() {
     this.knygos.length = 0;
     this.issaugoti();
+    this.onCountChange.emit();
   }
 }
