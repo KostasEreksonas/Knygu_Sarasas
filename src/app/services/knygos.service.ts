@@ -9,10 +9,7 @@ export class KnygosService {
   public onCountChange = new EventEmitter();
 
   constructor() {
-    let tmp = localStorage.getItem("knygos");
-    if (tmp != null) {
-      this.knygos = JSON.parse(tmp);
-    }
+
   }
 
   private issaugoti() {
