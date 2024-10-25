@@ -1,0 +1,16 @@
+<div class="card mt-5">
+  <div class="card-header">Pridėti naują knygą</div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="autorius" class="form-label">Autorius</label>
+      <input type="text" id="autorius" class="form-control" [(ngModel)]="autorius">
+      <label for="pavadinimas" class="form-label">Pavadinimas</label>
+      <input type="text" id="pavadinimas" class="form-control" [(ngModel)]="pavadinimas">
+      <label for="metai" class="form-label">Leidimo metai</label>
+      <input type="text" id="metai" class="form-control" [(ngModel)]="metai">
+    </div>
+    <button class="btn btn-success" (click)="pridetiKnyga()">Pridėti naują knygą</button>
+
+
+  </div>
+</div>

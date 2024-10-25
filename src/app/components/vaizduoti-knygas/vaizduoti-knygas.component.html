@@ -1,0 +1,23 @@
+<div class="card mt-5">
+  <div class="card-header">Knygų sąrašas</div>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let knyga of knygos; let i=index">
+      <section>
+        <h6>Autorius</h6>
+        <li class="list-group-item">
+          {{ knyga.autorius }}
+        </li>
+        <h6>Pavadinimas</h6>
+        <li class="list-group-item">
+          {{ knyga.pavadinimas }}
+        </li>
+        <h6>Leidimo metai</h6>
+        <li class="list-group-item">
+          {{ knyga.metai }}
+        </li>
+        <button class="btn btn-danger btn-sm float-end" (click)="pasalinti(i)">Pašalinti knygą</button>
+      </section>
+    </ul>
+    <button class="btn btn-danger btn-sm float-end" (click)="pasalintiViska()">Pašalinti knygas</button>
+  </div>
+</div>
